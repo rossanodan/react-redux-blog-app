@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class HeadLine extends React.Component {
 	constructor(props) {
@@ -17,5 +18,17 @@ class HeadLine extends React.Component {
 		);
 	}
 }
+
+HeadLine.propTypes = {
+	header: PropTypes.string,
+	description: PropTypes.string,
+	tempArray: PropTypes.arrayOf(PropTypes.shape({
+		firstName: PropTypes.string,
+		lastName: PropTypes.string,
+		email: PropTypes.string,
+		age: PropTypes.number,
+		onlineStatus: PropTypes.bool
+	}))
+};
 
 export default HeadLine;
